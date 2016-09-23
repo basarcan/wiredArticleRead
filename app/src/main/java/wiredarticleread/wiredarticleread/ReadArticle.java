@@ -36,6 +36,7 @@ public class ReadArticle extends AppCompatActivity {
 
     public ArrayList<String> usedWords = new ArrayList<String>();
     public ArrayList<String> wordsList = new ArrayList<String>();
+    public ArrayList<String> wordsValue = new ArrayList<String>();
 
 
     @Override
@@ -69,9 +70,11 @@ public class ReadArticle extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(ReadArticle.this,TranslatedWords.class);
-                intent.putExtra("translated",usedWords.get(0) + "   -   " + wordsList.get(0) +
-                        usedWords.get(1) + "   -   " + wordsList.get(1) + usedWords.get(2) + "   -   " +  wordsList.get(2) +
-                        usedWords.get(3) + "   -   " + wordsList.get(3) + usedWords.get(4) + "   -   " +  wordsList.get(4));
+                intent.putExtra("translated",usedWords.get(0)  + "   -   " + wordsValue.get(0) + "   -   " + wordsList.get(0) +
+                        usedWords.get(1) + "   -   " + wordsValue.get(1) + "   -   " + wordsList.get(1) +
+                        usedWords.get(2) + "   -   " + wordsValue.get(2) + "   -   " + wordsList.get(2) +
+                        usedWords.get(3) + "   -   " + wordsValue.get(3) + "   -   " + wordsList.get(3) +
+                        usedWords.get(4) + "   -   " + wordsValue.get(4) + "   -   " + wordsList.get(4));
                 startActivity(intent);
 
 
@@ -108,6 +111,7 @@ public class ReadArticle extends AppCompatActivity {
 
             if(entry.getValue() > 1 && i < 5){
                 usedWords.add(entry.getKey());
+                wordsValue.add(entry.getValue().toString());
                 i++;
             }
         }
