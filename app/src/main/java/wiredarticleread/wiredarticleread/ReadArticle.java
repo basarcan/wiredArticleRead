@@ -69,7 +69,9 @@ public class ReadArticle extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(ReadArticle.this,TranslatedWords.class);
-                intent.putExtra("translated", wordsList.get(0) + wordsList.get(1) + wordsList.get(2) + wordsList.get(3) + wordsList.get(4));
+                intent.putExtra("translated",usedWords.get(0) + "   -   " + wordsList.get(0) +
+                        usedWords.get(1) + "   -   " + wordsList.get(1) + usedWords.get(2) + "   -   " +  wordsList.get(2) +
+                        usedWords.get(3) + "   -   " + wordsList.get(3) + usedWords.get(4) + "   -   " +  wordsList.get(4));
                 startActivity(intent);
 
 
